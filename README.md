@@ -1,0 +1,2 @@
+# WEDDING_INVITATION
+모바일 청첩장입니다.
