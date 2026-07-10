@@ -223,7 +223,9 @@
 
 		[].forEach.call(accountBtn, function (e) {
 			e.addEventListener("click", () => {
-				console.log(e.previousElementSibling.textContent.replace(/-/g, ""))
+				const accountNumber = e.previousElementSibling.textContent.replace(/-/g, "");
+				navigator.clipboard.writeText(accountNumber)
+				alert("감사합니다. 계좌가 복사되었습니다.");
 			});
 		});
 	</script>
