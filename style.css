@@ -1,0 +1,328 @@
+
+		@import url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri.css');
+
+		@font-face {
+			font-family: 'Maru Buri';
+			font-weight: 200;
+			font-style: normal;
+			font-display: swap;
+			src: url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-ExtraLight.woff2') format('woff2'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-ExtraLight.woff') format('woff'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-ExtraLight.otf') format('opentype'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-ExtraLight.ttf') format('truetype');
+		}
+
+		@font-face {
+			font-family: 'Maru Buri';
+			font-weight: 300;
+			font-style: normal;
+			font-display: swap;
+			src: url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Light.woff2') format('woff2'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Light.woff') format('woff'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Light.otf') format('opentype'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Light.ttf') format('truetype');
+		}
+
+		@font-face {
+			font-family: 'Maru Buri';
+			font-weight: 400;
+			font-style: normal;
+			font-display: swap;
+			src: url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Regular.woff2') format('woff2'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Regular.woff') format('woff'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Regular.otf') format('opentype'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Regular.ttf') format('truetype');
+		}
+
+		@font-face {
+			font-family: 'Maru Buri';
+			font-weight: 600;
+			font-style: normal;
+			font-display: swap;
+			src: url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-SemiBold.woff2') format('woff2'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-SemiBold.woff') format('woff'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-SemiBold.otf') format('opentype'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-SemiBold.ttf') format('truetype');
+		}
+
+		@font-face {
+			font-family: 'Maru Buri';
+			font-weight: 700;
+			font-style: normal;
+			font-display: swap;
+			src: url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Bold.woff2') format('woff2'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Bold.woff') format('woff'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Bold.otf') format('opentype'),
+				url('https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri-Bold.ttf') format('truetype');
+		}
+
+		:root {
+			--color-bg: #f5f1eb;
+			--color-surface: #faf7f3;
+			--color-text: #2c2416;
+			--color-text-muted: #7a6e5e;
+			--color-text-faint: #b8b0a3;
+			--color-border: rgba(60, 40, 10, 0.12);
+			--color-accent: #8b7355;
+			--color-divider: #e0d8cc;
+			--space-1: 0.25rem;
+			--space-2: 0.5rem;
+			--space-3: 0.75rem;
+			--space-4: 1rem;
+			--space-5: 1.25rem;
+			--space-6: 1.5rem;
+			--space-8: 2rem;
+			--space-10: 2.5rem;
+			--radius-sm: 0.375rem;
+			--radius-md: 0.5rem;
+			--radius-full: 9999px;
+			--transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+			--text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+			--text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+			--text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+			--text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+			--text-xl: clamp(1.4rem, 1.2rem + 1vw, 1.8rem);
+		}
+
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			-webkit-text-size-adjust: none;
+			text-size-adjust: none;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		body {
+			justify-content: center;
+		}
+
+		.card {
+			margin-top: 30px;
+			background: var(--color-surface);
+			border-radius: var(--radius-md);
+			width: 100%;
+			padding: var(--space-8) var(--space-6);
+		}
+
+		/* 신랑 / 신부 row */
+		.couple-row {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: var(--space-4);
+			margin-bottom: var(--space-6);
+		}
+
+		.person-col {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: var(--space-3);
+		}
+
+		.person-title {
+			font-size: var(--text-base);
+			font-weight: 700;
+			color: var(--color-text);
+			letter-spacing: 0.1em;
+		}
+
+		.icon-row {
+			display: flex;
+			align-items: center;
+			gap: var(--space-3);
+		}
+
+		.icon-btn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 36px;
+			height: 36px;
+			border-radius: var(--radius-full);
+			border: 1px solid var(--color-border);
+			background: transparent;
+			color: var(--color-text-muted);
+			cursor: pointer;
+			transition:
+				background var(--transition),
+				color var(--transition),
+				border-color var(--transition);
+			text-decoration: none;
+		}
+
+		.icon-btn:active {
+			background: var(--color-accent);
+			color: #fff;
+			border-color: var(--color-accent);
+		}
+
+		.icon-btn svg {
+			width: 16px;
+			height: 16px;
+			display: block;
+			flex-shrink: 0;
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 1.8;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+		}
+
+		/* Divider */
+		.divider {
+			border: none;
+			border-top: 1px solid var(--color-divider);
+			margin: 0 0 var(--space-6);
+		}
+
+		/* Parent blocks */
+		.parent-section {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: var(--space-5);
+		}
+
+		.parent-col {
+			display: flex;
+			flex-direction: column;
+			gap: var(--space-5);
+		}
+
+		.parent-block {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: var(--space-2);
+		}
+
+		.parent-role {
+			font-size: var(--text-xs);
+			color: #8b8884;
+			letter-spacing: 0.08em;
+		}
+
+		.parent-name {
+			font-size: var(--text-sm);
+			color: var(--color-text);
+			font-weight: 700;
+			letter-spacing: 0.04em;
+		}
+
+
+		body {
+			background-color: #212121;
+			font-family: 'Maru Buri', sans-serif;
+		}
+
+		main {
+			background: url(./img/bg.jpg) no-repeat top center;
+			background-size: 694px;
+		}
+
+		section {
+			width: 368px;
+			margin: 0 auto;
+			font-size: 16px;
+			font-weight: 600;
+			text-align: center;
+		}
+
+		section:first-of-type {
+			min-height: 1000px;
+			padding-top: 540px;
+		}
+
+		h1,
+		h2,
+		h3 {
+			color: rgb(143, 88, 63);
+		}
+
+		h1 {
+			font-size: 26px;
+		}
+
+		h1 span {
+			font-size: 16px;
+			font-weight: 600;
+		}
+
+		h2 {
+			margin-top: 10px;
+			font-size: 20px;
+			font-weight: 600;
+		}
+
+		h3 {
+			font-size: 16px;
+			font-weight: 600;
+		}
+
+		i {
+			display: block;
+		}
+
+		i.hr {
+			background: url(./img/ico.png) no-repeat 50% 50%;
+			background-size: 200%;
+			width: 54px;
+			height: 39px;
+			margin: 25px auto;
+		}
+
+		p {
+			font-size: 16px;
+			color: rgb(51, 51, 51);
+			line-height: 200%;
+		}
+
+		div.contact {
+			background-color: #f9f9fb;
+		}
+
+		
+			.account {
+				padding: 25px 30px 25px;
+				background-color: #fff;
+			}
+
+			.account dl {
+				text-align: left;
+			}
+			
+			.account dl dd+dd {
+				margin-top: 10px;
+			}
+
+			.account h3 {
+				margin: 20px 0 10px;
+				font-size: 18px;
+			}
+
+			.account .account-name {
+				font-size: 16px;
+			}
+
+			.account button {
+				display: inline-block;
+				align-items: center;
+				justify-content: center;
+				padding: 5px 10px;
+				margin-left: 10px;
+				border-radius: 15px;
+				border: 1px solid var(--color-border);
+				background: transparent;
+				color: var(--color-text-muted);
+				cursor: pointer;
+				transition:
+					background var(--transition),
+					color var(--transition),
+					border-color var(--transition);
+				text-decoration: none;
+			}
